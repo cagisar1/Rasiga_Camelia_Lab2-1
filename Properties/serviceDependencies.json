@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:Rasiga_Camelia_Lab2_1Context"
+    }
+  }
+}

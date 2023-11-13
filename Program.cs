@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Rasiga_Camelia_Lab2_1.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<Rasiga_Camelia_Lab2_1Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Rasiga_Camelia_Lab2_1Context") ?? throw new InvalidOperationException("Connection string 'Rasiga_Camelia_Lab2_1Context' not found.")));
 
 var app = builder.Build();
 

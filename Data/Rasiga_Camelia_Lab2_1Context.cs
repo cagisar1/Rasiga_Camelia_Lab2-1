@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Rasiga_Camelia_Lab2_1.Models;
+
+namespace Rasiga_Camelia_Lab2_1.Data
+{
+    public class Rasiga_Camelia_Lab2_1Context : DbContext
+    {
+        public Rasiga_Camelia_Lab2_1Context (DbContextOptions<Rasiga_Camelia_Lab2_1Context> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Rasiga_Camelia_Lab2_1.Models.Book> Book { get; set; } = default!;
+    }
+}
