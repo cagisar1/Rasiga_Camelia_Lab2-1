@@ -19,5 +19,9 @@ namespace Rasiga_Camelia_Lab2_1.Data
         public DbSet<Rasiga_Camelia_Lab2_1.Models.Publisher>? Publisher { get; set; }
 
         public DbSet<Rasiga_Camelia_Lab2_1.Models.Author>? Author { get; set; }
+
+        public DbSet<Rasiga_Camelia_Lab2_1.Models.Category>? Category { get; set; }
+
+        public DbSet<Rasiga_Camelia_Lab2_1.Models.BookCategory>? BookCategory { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rasiga_Camelia_Lab2_1.Data;
 
@@ -11,9 +12,10 @@ using Rasiga_Camelia_Lab2_1.Data;
 namespace Rasiga_Camelia_Lab2_1.Migrations
 {
     [DbContext(typeof(Rasiga_Camelia_Lab2_1Context))]
-    partial class Rasiga_Camelia_Lab2_1ContextModelSnapshot : ModelSnapshot
+    [Migration("20231113141604_BookCategory")]
+    partial class BookCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,31 +23,6 @@ namespace Rasiga_Camelia_Lab2_1.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("Rasiga_Camelia_Lab2_1.Models.AssignedCategoryData", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
-
-                    b.Property<bool>("Assigned")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CategoryID");
-
-                    b.ToTable("AssignedCategoryData");
-                });
 
             modelBuilder.Entity("Rasiga_Camelia_Lab2_1.Models.Author", b =>
                 {
@@ -158,17 +135,6 @@ namespace Rasiga_Camelia_Lab2_1.Migrations
                     b.ToTable("Publisher");
                 });
 
-            modelBuilder.Entity("Rasiga_Camelia_Lab2_1.Models.AssignedCategoryData", b =>
-                {
-                    b.HasOne("Rasiga_Camelia_Lab2_1.Models.Category", "Category")
-                        .WithMany("AssignedCategories")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("Rasiga_Camelia_Lab2_1.Models.Book", b =>
                 {
                     b.HasOne("Rasiga_Camelia_Lab2_1.Models.Author", "Author")
@@ -215,8 +181,6 @@ namespace Rasiga_Camelia_Lab2_1.Migrations
 
             modelBuilder.Entity("Rasiga_Camelia_Lab2_1.Models.Category", b =>
                 {
-                    b.Navigation("AssignedCategories");
-
                     b.Navigation("BookCategories");
                 });
 

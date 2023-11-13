@@ -10,13 +10,12 @@ namespace Rasiga_Camelia_Lab2_1.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Display(Name ="Full Name")]
-
         public string FullName
         {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
+           get
+           {
+               return FirstName + " " + LastName;
+           }
         }
 
         public ICollection<Book>? Books { get; set; }
