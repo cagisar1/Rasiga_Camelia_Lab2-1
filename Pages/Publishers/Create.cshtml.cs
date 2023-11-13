@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Rasiga_Camelia_Lab2_1.Data;
 using Rasiga_Camelia_Lab2_1.Models;
 
-namespace Rasiga_Camelia_Lab2_1.Pages.Books
+namespace Rasiga_Camelia_Lab2_1.Pages.Publishers
 {
     public class CreateModel : PageModel
     {
@@ -21,24 +21,22 @@ namespace Rasiga_Camelia_Lab2_1.Pages.Books
 
         public IActionResult OnGet()
         {
-            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FullName");
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
 
         [BindProperty]
-        public Book Book { get; set; } = default!;
+        public Publisher Publisher { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Book == null || Book == null)
+          if (!ModelState.IsValid || _context.Publisher == null || Publisher == null)
             {
                 return Page();
             }
 
-            _context.Book.Add(Book);
+            _context.Publisher.Add(Publisher);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
