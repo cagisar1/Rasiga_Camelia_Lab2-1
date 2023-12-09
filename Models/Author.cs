@@ -9,6 +9,7 @@ namespace Rasiga_Camelia_Lab2_1.Models
         public string FirstName {  get; set; }
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
         [Display(Name ="Full Name")]
         public string FullName
         {
