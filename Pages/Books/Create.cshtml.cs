@@ -55,16 +55,6 @@ namespace Rasiga_Camelia_Lab2_1.Pages.Books
             _context.Book.Add(Book);
             await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
-
-          /*if (!ModelState.IsValid || _context.Book == null || Book == null)
-            {
-                return Page();
-            }
-
-            _context.Book.Add(Book);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");*/
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Rasiga_Camelia_Lab2_1.Pages.Books
                 .Include(b=>b.Author)
                 .Include(b => b.Publisher)
                 .Include(b => b.BookCategories)
-                .ThenInclude(b => b.Category)
+                    .ThenInclude(b => b.Category)
                 .AsNoTracking()
                 .OrderBy(b => b.Title)
                 .ToListAsync();

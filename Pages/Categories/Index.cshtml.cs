@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Rasiga_Camelia_Lab2_1.Data;
 using Rasiga_Camelia_Lab2_1.Models;
+//using Rasiga_Camelia_Lab2_1.Models.ViewModels;
 
 namespace Rasiga_Camelia_Lab2_1.Pages.Categories
 {
@@ -20,7 +21,6 @@ namespace Rasiga_Camelia_Lab2_1.Pages.Categories
         }
 
         public IList<Category> Category { get;set; } = default!;
-
         public async Task OnGetAsync()
         {
             if (_context.Category != null)
@@ -28,5 +28,6 @@ namespace Rasiga_Camelia_Lab2_1.Pages.Categories
                 Category = await _context.Category.ToListAsync();
             }
         }
+
     }
 }
