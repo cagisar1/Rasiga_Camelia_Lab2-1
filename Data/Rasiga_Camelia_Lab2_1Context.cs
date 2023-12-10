@@ -23,5 +23,9 @@ namespace Rasiga_Camelia_Lab2_1.Data
         public DbSet<Rasiga_Camelia_Lab2_1.Models.Category>? Category { get; set; }
 
         public DbSet<Rasiga_Camelia_Lab2_1.Models.BookCategory>? BookCategory { get; set; }
+
+        public DbSet<Rasiga_Camelia_Lab2_1.Models.Member>? Member { get; set; }
+
+        public DbSet<Borrowing>? Borrowing { get; set; }
     }
 }

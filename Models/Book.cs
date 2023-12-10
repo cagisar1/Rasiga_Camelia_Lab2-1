@@ -21,6 +21,8 @@ namespace Rasiga_Camelia_Lab2_1.Models
         public int? PublisherID {  get; set; }
         public Publisher? Publisher { get; set; }
 
+        public Borrowing? Borrowing { get; set; }
+
         [Display(Name = "Book Category")]
         public ICollection<BookCategory>? BookCategories { get; set;}
     }
