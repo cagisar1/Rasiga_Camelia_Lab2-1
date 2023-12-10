@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,6 +11,7 @@ using Rasiga_Camelia_Lab2_1.Models;
 
 namespace Rasiga_Camelia_Lab2_1.Pages.Books
 {
+    [Authorize(Roles ="Admin")]
     public class CreateModel : BookCategoriesPageModel
     {
         private readonly Rasiga_Camelia_Lab2_1.Data.Rasiga_Camelia_Lab2_1Context _context;
